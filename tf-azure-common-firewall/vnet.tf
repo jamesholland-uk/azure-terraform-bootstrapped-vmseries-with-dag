@@ -49,8 +49,8 @@ resource "azurerm_route_table" "trust-rt" {
     name           = "to-vm-series"
     address_prefix = "0.0.0.0/0"
     next_hop_type  = "VirtualAppliance"
-    //next_hop_in_ip_address = azurerm_network_interface.ethernet0_1[count.index].private_ip_address
-    next_hop_in_ip_address = "10.1.2.4"
+    next_hop_in_ip_address = azurerm_network_interface.ethernet0_2.0.private_ip_address
+    //next_hop_in_ip_address = "10.1.2.4"
   }
 
   depends_on = [
